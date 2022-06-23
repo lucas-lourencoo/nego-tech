@@ -17,10 +17,18 @@
   <rect width='154.32' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 291.531 190)' fill='#AEF9FD'>
     <animate attributeName='width' values='154.32;120;154.32' dur='8s' repeatCount='indefinite' />
   </rect>
-  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 80.5308 211)' fill='#4AB6BC' />
-  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 185.531 288)' fill='#66EBF2' />
-  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 314.531 370)' fill='#89F3F9' />
-  <rect width='121.887' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 594.531 427)' fill='#AEF9FD' />
+  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 80.5308 211)' fill='#4AB6BC'>
+    <animate attributeName='width' values='262.25;150;262.25' dur='11s' repeatCount='indefinite' />
+  </rect>
+  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 185.531 288)' fill='#66EBF2'>
+    <animate attributeName='height' values='29;36;29' dur='4s' repeatCount='indefinite' />
+  </rect>
+  <rect width='262.25' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 314.531 370)' fill='#89F3F9'>
+    <animate attributeName='width' values='200;262.25;200' dur='10s' repeatCount='indefinite' />
+  </rect>
+  <rect width='121.887' height='36' rx='12' transform='matrix(0.983255 0.182236 -0.348081 0.937464 594.531 427)' fill='#AEF9FD'>
+    <animate attributeName='rx' values='12;0;12' dur='2s' repeatCount='indefinite' />
+  </rect>
   <defs>
     <filter id='filter0_d_16_13' x='89.1921' y='209.84' width='807.753' height='711.575' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'>
       <feFlood flood-opacity='0' result='BackgroundImageFix' />

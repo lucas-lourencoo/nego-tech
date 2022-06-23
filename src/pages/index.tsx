@@ -17,7 +17,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <img src='/hero.svg' alt='' />
+      <div className='image'>
+        <img src='/hero.svg' alt='' />
+        <img src='/logo-branco.png' alt='' />
+      </div>
     </Container>
   );
 };

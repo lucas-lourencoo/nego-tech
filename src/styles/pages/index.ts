@@ -77,4 +77,33 @@ export const Container = styled.main`
       }
     }
   }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  img {
+    @keyframes UpDown {
+      from {
+        transform: translateY(0.8rem);
+      }
+      to {
+        transform: translateY(-0.8rem);
+      }
+    }
+
+    animation: UpDown 5s alternate infinite;
+
+    & + img {
+      position: absolute;
+      left: 5%;
+      right: 10%;
+      top: 10%;
+      bottom: 0;
+      max-width: 40.6rem;
+    }
+  }
 `;
