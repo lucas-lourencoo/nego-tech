@@ -9,7 +9,7 @@ export const Container = styled.header`
   max-width: 1220px;
   margin: 0 auto;
   width: 100%;
-  height: 9.2rem;
+  height: 12rem;
 
   ul li {
     margin: 0 1.6rem;
@@ -18,6 +18,8 @@ export const Container = styled.header`
       background: var(--complement-400);
       padding: 0.8rem 1.6rem;
       border-radius: 16px;
+      color: var(--black);
+      font-weight: 700;
     }
   }
 `;

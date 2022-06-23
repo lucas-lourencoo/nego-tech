@@ -5,10 +5,10 @@ const Home: NextPage = () => {
   return (
     <Container>
       <div className='text'>
-        <h1>Seja bem-vindo à Saint Tech</h1>
+        <h1>Seja bem-vindo à Nego Tech</h1>
         <p>
           Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação
-          WEB e soluções em geral. Vamos começar?
+          WEB e tecnologia em geral. Vamos começar?
         </p>
 
         <div className='buttons'>
