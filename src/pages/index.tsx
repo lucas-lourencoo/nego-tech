@@ -1,0 +1,25 @@
+import type { NextPage } from 'next';
+import { Container } from '../styles/pages';
+
+const Home: NextPage = () => {
+  return (
+    <Container>
+      <div className='text'>
+        <h1>Seja bem-vindo à Saint Tech</h1>
+        <p>
+          Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação
+          WEB e soluções em geral. Vamos começar?
+        </p>
+
+        <div className='buttons'>
+          <button>Fazer um orçamento</button>
+          <button>Sobre nós</button>
+        </div>
+      </div>
+
+      <img src='/hero.svg' alt='' />
+    </Container>
+  );
+};
+
+export default Home;
