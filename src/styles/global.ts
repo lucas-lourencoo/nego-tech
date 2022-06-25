@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     background: var(--black);
     color: var(--white);
 
@@ -27,8 +27,16 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
   :root{
-    font-size: 62.5%;
     --black: #1C1C1E;
     --white: #F8F7FC;
     --principal-200: #AEF9FD;

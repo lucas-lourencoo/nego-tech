@@ -5,7 +5,9 @@ const Home: NextPage = () => {
   return (
     <Container>
       <div className='text'>
-        <h1>Seja bem-vindo à Nego Tech</h1>
+        <h1>
+          Seja bem-vindo <br /> à Nego Tech
+        </h1>
         <p>
           Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação
           WEB e tecnologia em geral. Vamos começar?
@@ -18,7 +20,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className='image'>
-        <img src='/hero.svg' alt='' />
+        <img src='/Group 42.svg' alt='' />
         <img src='/logo-branco.png' alt='' />
       </div>
     </Container>

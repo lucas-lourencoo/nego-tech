@@ -9,14 +9,22 @@ export const Container = styled.header`
   max-width: 1220px;
   margin: 0 auto;
   width: 100%;
-  height: 12rem;
+  height: 7.5rem;
+
+  @media (max-width: 1120px) {
+    max-width: 90%;
+
+    ul {
+      display: none;
+    }
+  }
 
   ul li {
-    margin: 0 1.6rem;
+    margin: 0 1rem;
 
     &:last-child {
       background: var(--complement-400);
-      padding: 0.8rem 1.6rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 16px;
       color: var(--black);
       font-weight: 700;
