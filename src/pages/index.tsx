@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
 import { Container } from '../styles/pages';
+import { FiArrowDown, FiArrowDownCircle } from 'react-icons/fi';
 
 const Home: NextPage = () => {
   return (
     <Container>
       <div className='text'>
         <h1>
-          Seja bem-vindo <br /> à Nego Tech
+          Seja bem-vindo <br /> à <span>NEGO</span> <span>TECH</span>
         </h1>
         <p>
           Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação
@@ -22,6 +23,10 @@ const Home: NextPage = () => {
       <div className='image'>
         <img src='/Group 42.svg' alt='' />
         <img src='/logo-branco.png' alt='' />
+      </div>
+
+      <div className='goDown'>
+        <img src='/godown.svg' />
       </div>
     </Container>
   );

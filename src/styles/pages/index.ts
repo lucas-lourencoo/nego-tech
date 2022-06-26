@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   min-height: calc(100vh - 7.5rem);
-  max-width: 1220px;
+  max-width: 1120px;
   margin: 0 auto;
   display: grid;
   align-items: center;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  position: relative;
 
   @media (max-width: 1120px) {
     grid-template-columns: none;
@@ -42,10 +44,22 @@ export const Container = styled.main`
     flex-direction: column;
 
     h1 {
-      font: 700 5rem/1.1 'Nunito', sans-serif;
+      font: 700 4.5rem/1.1 'Nunito', sans-serif;
       margin-bottom: 1rem;
       letter-spacing: -1px;
       animation: appearText 1.5s forwards;
+
+      span {
+        font-weight: 900;
+        letter-spacing: -5.8px;
+
+        & + span {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 100;
+          letter-spacing: -4px;
+          margin-left: -1.1rem;
+        }
+      }
 
       @media (max-width: 1120px) {
         font-size: 3.5rem;
@@ -65,7 +79,7 @@ export const Container = styled.main`
       background: linear-gradient(93.21deg, #66ebf2 -2.2%, #aef9fd 102.5%);
       box-shadow: 0px 4px 25px -10px rgba(0, 0, 0, 0.5);
       border-radius: 16px;
-      padding: 1rem 2rem;
+      padding: 0.9rem 1.5rem;
       font-family: 'Nunito', sans-serif;
       color: var(--black);
       min-width: 10rem;
@@ -73,6 +87,7 @@ export const Container = styled.main`
       opacity: 0;
       animation: appearTextLeft 1s 1.3s forwards;
       transition: all 0.3s;
+      font-weight: 600;
 
       :hover {
         filter: brightness(90%);
@@ -94,10 +109,11 @@ export const Container = styled.main`
 
   .image {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
-      max-width: 90%;
-
       @keyframes UpDown {
         from {
           transform: translateY(0.2rem);
@@ -112,11 +128,32 @@ export const Container = styled.main`
       & + img {
         position: absolute;
         left: 50%;
-        margin-left: -15rem;
+        margin-left: -13rem;
         top: 50%;
-        margin-top: -12rem;
-        max-width: 22rem;
+        margin-top: -11rem;
+        max-width: 21rem;
       }
+    }
+  }
+
+  .goDown {
+    @keyframes shineBrightLikeADiamont {
+      0% {
+        opacity: 0.5;
+        transform: translateY(-0.5rem);
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    position: absolute;
+    bottom: 1rem;
+
+    img {
+      max-width: 80%;
+      animation: shineBrightLikeADiamont 1s forwards infinite alternate;
     }
   }
 `;
