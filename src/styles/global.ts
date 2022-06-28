@@ -16,7 +16,23 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--black);
     color: var(--white);
 
-    ::before{
+    &::-webkit-scrollbar {
+      width: 20px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+     
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(60,60,60,0.7);
+      border: 6px solid var(--black);
+    }
+
+    /* ::before{
       content: "";
       width: 100%;
       height: 100%;
@@ -24,7 +40,8 @@ export const GlobalStyle = createGlobalStyle`
       background: url('/bg.png');
       mix-blend-mode: darken;
       z-index: -1;
-    }
+      opacity: .2;
+    } */
   }
 
   html {

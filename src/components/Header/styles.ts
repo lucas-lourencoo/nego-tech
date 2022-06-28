@@ -9,7 +9,11 @@ export const Container = styled.header`
   max-width: 1120px;
   margin: 0 auto;
   width: 100%;
-  height: 7.5rem;
+  height: 7rem;
+  background: linear-gradient(180deg, var(--black) 25%, transparent 100%);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   @media (max-width: 1120px) {
     max-width: 90%;
@@ -24,7 +28,7 @@ export const Container = styled.header`
 
     &:last-child {
       background: var(--complement-400);
-      padding: 0.7rem 1.5rem;
+      padding: 0.5rem 1.5rem;
       border-radius: 16px;
       color: var(--black);
       font-weight: 700;
