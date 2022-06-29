@@ -99,18 +99,6 @@ const Home: NextPage = () => {
         </div>
       </About>
 
-      <hr
-        style={{
-          maxWidth: '1120px',
-          margin: '0 auto',
-          borderColor: 'var(--principal-600)',
-          borderWidth: '3px',
-          borderStyle: 'solid',
-          borderRadius: '5px',
-          backgroundColor: 'var(--principal-600)',
-        }}
-      />
-
       <Projects>
         <h2>Portfólio</h2>
         <h3>Alguns dos meus projetos</h3>

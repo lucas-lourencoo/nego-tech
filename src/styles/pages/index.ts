@@ -190,6 +190,8 @@ export const About = styled.section`
   margin: 0 auto;
   gap: 2rem;
   padding: 3.5rem 0;
+  border-top: 2px solid rgba(50, 50, 50, 0.7);
+  margin-top: 2rem;
 
   @media (max-width: 760px) {
     grid-template-columns: none;
@@ -284,7 +286,7 @@ export const About = styled.section`
       position: absolute;
       width: 100%;
       height: 100%;
-      background: radial-gradient(500% 47%, transparent 50%, var(--black) 100%);
+      background: radial-gradient(500% 48%, transparent 50%, var(--black) 100%);
       z-index: 1;
     }
 
@@ -330,7 +332,8 @@ export const Projects = styled.section`
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
 
     @media (max-width: 760px) {
       grid-template-columns: none;
