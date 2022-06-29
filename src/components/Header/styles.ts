@@ -15,8 +15,14 @@ export const Container = styled.header`
   top: 0;
   z-index: 1000;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 720px) {
     max-width: 90%;
+    justify-content: center;
+    height: 6rem;
+
+    img {
+      height: 4rem;
+    }
 
     ul {
       display: none;

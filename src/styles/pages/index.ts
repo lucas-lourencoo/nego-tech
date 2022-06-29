@@ -14,7 +14,7 @@ export const Container = styled.section`
   @media (max-width: 1120px) {
     grid-template-columns: none;
     max-width: 90%;
-    gap: 4rem;
+    gap: 0;
   }
 
   .text {
@@ -191,6 +191,12 @@ export const About = styled.section`
   gap: 2rem;
   padding: 3.5rem 0;
 
+  @media (max-width: 760px) {
+    grid-template-columns: none;
+    max-width: 90%;
+    gap: 3rem;
+  }
+
   .aboutMe {
     h2 {
       font: 700 1.25rem/1.1 'Nunito', sans-serif;
@@ -241,6 +247,10 @@ export const About = styled.section`
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
     max-height: 680px;
+
+    @media (max-width: 760px) {
+      max-height: 460px;
+    }
 
     @keyframes moveImages {
       0% {
@@ -302,6 +312,10 @@ export const Projects = styled.section`
   gap: 2rem;
   padding: 3.5rem 0;
 
+  @media (max-width: 760px) {
+    max-width: 90%;
+  }
+
   h2 {
     font: 700 1.25rem/1.1 'Nunito', sans-serif;
     text-transform: uppercase;
@@ -317,6 +331,10 @@ export const Projects = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+
+    @media (max-width: 760px) {
+      grid-template-columns: none;
+    }
 
     .portItem {
       background: #252828;
