@@ -151,10 +151,32 @@ export const Container = styled.section`
 
     position: absolute;
     bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1120px;
+    width: 100%;
 
     img {
-      max-width: 80%;
+      width: 4rem;
       animation: shineBrightLikeADiamont 1s forwards infinite alternate;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        transition: 0.3s;
+      }
+
+      a:hover {
+        filter: brightness(75%);
+      }
+
+      a + a {
+        margin-left: 1.5rem;
+      }
     }
   }
 `;
@@ -167,7 +189,7 @@ export const About = styled.section`
   max-width: 1120px;
   margin: 0 auto;
   gap: 2rem;
-  padding: 2.5rem 0;
+  padding: 3.5rem 0;
 
   .aboutMe {
     h2 {
@@ -270,6 +292,67 @@ export const About = styled.section`
       max-width: 100%;
       margin-bottom: 0.25rem;
       filter: grayscale(80%);
+    }
+  }
+`;
+
+export const Projects = styled.section`
+  max-width: 1120px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 3.5rem 0;
+
+  h2 {
+    font: 700 1.25rem/1.1 'Nunito', sans-serif;
+    text-transform: uppercase;
+    color: var(--principal-500);
+  }
+  h3 {
+    font: 500 3.4rem/1 'Nunito', sans-serif;
+    color: var(--gray-300);
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .portItem {
+      background: #252828;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      transition: 0.3s;
+
+      p {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--gray-300);
+        margin: 1rem 0;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray-500);
+        transition: 0.5s;
+        font-weight: 400;
+
+        :hover {
+          transform: translateX(0.1rem);
+          color: var(--principal-300);
+        }
+
+        svg {
+          margin-right: 0.5rem;
+        }
+      }
     }
   }
 `;

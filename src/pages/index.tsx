@@ -1,5 +1,12 @@
 import type { NextPage } from 'next';
-import { About, Container } from '../styles/pages';
+import { About, Container, Projects } from '../styles/pages';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import {
+  FaFacebookSquare,
+  FaGithub,
+  FaGitSquare,
+  FaInstagram,
+} from 'react-icons/fa';
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +23,7 @@ const Home: NextPage = () => {
 
           <div className='buttons'>
             <button>Fazer um orçamento</button>
-            <button>Sobre nós</button>
+            <button>Sobre mim</button>
           </div>
         </div>
 
@@ -27,6 +34,17 @@ const Home: NextPage = () => {
 
         <div className='goDown'>
           <img src='/godown.svg' />
+          <div className='social'>
+            <a href='https://www.instagram.com/nego.tech'>
+              <FaInstagram size={30} color='var(--principal-400)' />
+            </a>
+            <a href='https://www.facebook.com/negotech22' target='__blank'>
+              <FaFacebookSquare size={30} color='var(--principal-400)' />
+            </a>
+            <a href='https://github.com/lucas-lourencoo' target='__blank'>
+              <FaGithub size={30} color='var(--principal-400)' />
+            </a>
+          </div>
         </div>
       </Container>
 
@@ -80,6 +98,74 @@ const Home: NextPage = () => {
           </div>
         </div>
       </About>
+
+      <hr
+        style={{
+          maxWidth: '1120px',
+          margin: '0 auto',
+          borderColor: 'var(--principal-600)',
+          borderWidth: '3px',
+          borderStyle: 'solid',
+          borderRadius: '5px',
+          backgroundColor: 'var(--principal-600)',
+        }}
+      />
+
+      <Projects>
+        <h2>Portfólio</h2>
+        <h3>Alguns dos meus projetos</h3>
+
+        <div className='grid'>
+          <div className='portItem'>
+            <img src='/fire.png' alt='Fogo Juventude UP' />
+            <p>Juventude UP</p>
+            <a href='https://www.juventudeup.com.br/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+          <div className='portItem'>
+            <img src='/viamaq.png' alt='Logo Viamaq' />
+            <p>Viamaq</p>
+            <a href='https://viamaqtratores.com.br/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+          <div className='portItem'>
+            <img src='/fazendas.png' alt='Logo Fazendas do Brasil' />
+            <p>Fazendas do Brasil</p>
+            <a href='https://www.fazendasdobrasil.com.br/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+          <div className='portItem'>
+            <img src='/ieducaa.png' alt='Logo IEDUCAA' />
+            <p>IEDUCAA</p>
+            <a href='https://www.ieducaa.org/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+          <div className='portItem'>
+            <img src='/israel.png' alt='Logo Israel Profético' />
+            <p>Israel Profético</p>
+            <a href='https://www.israelprofetico.com.br/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+          <div className='portItem'>
+            <img src='/paraguai.png' alt='Logo Missão Paraguai' />
+            <p>Missão Paraguai</p>
+            <a href='https://missaoparaguai.com.br/' target='__blank'>
+              <FiArrowRight strokeWidth={3} />
+              Visualizar projeto
+            </a>
+          </div>
+        </div>
+      </Projects>
     </main>
   );
 };
