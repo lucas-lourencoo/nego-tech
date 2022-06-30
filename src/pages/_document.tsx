@@ -51,7 +51,7 @@ class MyDocument extends Document {
             property='og:description'
             content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
           />
-          <meta property='og:image' content='/logo.png' />
+          <meta property='og:image' content='%PUBLIC_HTML%/logo.png' />
 
           <meta property='twitter:card' content='summary_large_image' />
           <meta
@@ -66,7 +66,10 @@ class MyDocument extends Document {
             property='twitter:description'
             content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
           />
-          <meta property='twitter:image' content='/logo.png'></meta>
+          <meta
+            property='twitter:image'
+            content='%PUBLIC_HTML%/logo.png'
+          ></meta>
           <link
             href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Roboto:wght@100;400;700;900&display=swap'
             rel='stylesheet'
