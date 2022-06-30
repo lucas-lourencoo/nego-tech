@@ -68,6 +68,22 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
           <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-FXPTBY2QE2`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FXPTBY2QE2', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />
