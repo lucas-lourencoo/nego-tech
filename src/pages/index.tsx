@@ -1,12 +1,8 @@
 import type { NextPage } from 'next';
 import { About, Container, Projects } from '../styles/pages';
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import {
-  FaFacebookSquare,
-  FaGithub,
-  FaGitSquare,
-  FaInstagram,
-} from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
+import { FaFacebookSquare, FaGithub, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 const Home: NextPage = () => {
   return (
@@ -22,14 +18,28 @@ const Home: NextPage = () => {
           </p>
 
           <div className='buttons'>
-            <button>Fazer um orçamento</button>
-            <button>Sobre mim</button>
+            <a
+              href='https://api.whatsapp.com/send?phone=5567981611571&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20Site/Design.'
+              title='Fazer um orçamento'
+              target='__blank'
+            >
+              Fazer um orçamento
+            </a>
+            <Link
+              to='about'
+              href='#about'
+              smooth={true}
+              offset={0}
+              duration={1000}
+            >
+              Sobre mim
+            </Link>
           </div>
         </div>
 
         <div className='image'>
-          <img src='/Group 42.svg' alt='' />
-          <img src='/logo-branco.png' alt='' />
+          <img src='/Group 42.svg' alt='Imagem' />
+          <img src='/logo-branco.png' alt='Logo na cor branca' />
         </div>
 
         <div className='goDown'>

@@ -75,7 +75,7 @@ export const Container = styled.section`
       animation: appearText 1s 0.5s forwards;
     }
 
-    button {
+    a {
       background: linear-gradient(93.21deg, #66ebf2 -2.2%, #aef9fd 102.5%);
       box-shadow: 0px 4px 25px -10px rgba(0, 0, 0, 0.5);
       border-radius: 16px;
@@ -93,7 +93,7 @@ export const Container = styled.section`
         filter: brightness(90%);
       }
 
-      & + button {
+      & + a {
         background: none;
         color: var(--white);
         border: 2px solid var(--principal-400);
