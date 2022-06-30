@@ -42,7 +42,7 @@ class MyDocument extends Document {
             content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
           />
           <meta property='og:type' content='website' />
-          <meta property='og:url' content='https://nego-tech.vercel.app/' />
+          <meta property='og:url' content='https://www.negotech.com.br/' />
           <meta
             property='og:title'
             content='Nego Tech | Fullstack Dev - Web Designer'
@@ -52,12 +52,8 @@ class MyDocument extends Document {
             content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
           />
           <meta property='og:image' content='%PUBLIC_HTML%/logo.png' />
-
           <meta property='twitter:card' content='summary_large_image' />
-          <meta
-            property='twitter:url'
-            content='https://nego-tech.vercel.app/'
-          />
+          <meta property='twitter:url' content='https://www.negotech.com.br/' />
           <meta
             property='twitter:title'
             content='Nego Tech | Fullstack Dev - Web Designer'
