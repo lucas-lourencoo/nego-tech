@@ -11,7 +11,7 @@ import {
 const Home: NextPage = () => {
   return (
     <main>
-      <Container>
+      <Container id='home'>
         <div className='text'>
           <h1>
             Seja bem-vindo <br /> à <span>NEGO</span> <span>TECH</span>
@@ -33,22 +33,34 @@ const Home: NextPage = () => {
         </div>
 
         <div className='goDown'>
-          <img src='/godown.svg' />
+          <img src='/godown.svg' alt='Arrow Down' />
           <div className='social'>
-            <a href='https://www.instagram.com/nego.tech'>
+            <a
+              href='https://www.instagram.com/nego.tech'
+              title='http://www.instagram.com/nego.tech'
+              target='__blank'
+            >
               <FaInstagram size={30} color='var(--principal-400)' />
             </a>
-            <a href='https://www.facebook.com/negotech22' target='__blank'>
+            <a
+              href='https://www.facebook.com/negotech22'
+              title='https://www.facebook.com/negotech22'
+              target='__blank'
+            >
               <FaFacebookSquare size={30} color='var(--principal-400)' />
             </a>
-            <a href='https://github.com/lucas-lourencoo' target='__blank'>
+            <a
+              href='https://github.com/lucas-lourencoo'
+              title='https://github.com/lucas-lourenco'
+              target='__blank'
+            >
               <FaGithub size={30} color='var(--principal-400)' />
             </a>
           </div>
         </div>
       </Container>
 
-      <About>
+      <About id='about'>
         <div className='aboutMe'>
           <h2>Sobre mim</h2>
           <h3>Lucas Lourenço Silva</h3>
@@ -99,7 +111,7 @@ const Home: NextPage = () => {
         </div>
       </About>
 
-      <Projects>
+      <Projects id='projects'>
         <h2>Portfólio</h2>
         <h3>Alguns dos meus projetos</h3>
 
