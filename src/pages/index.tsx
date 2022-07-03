@@ -1,7 +1,12 @@
 import type { NextPage } from 'next';
 import { About, Container, Projects } from '../styles/pages';
 import { FiArrowRight } from 'react-icons/fi';
-import { FaFacebookSquare, FaGithub, FaInstagram } from 'react-icons/fa';
+import {
+  FaFacebookSquare,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Home: NextPage = () => {
@@ -58,6 +63,13 @@ const Home: NextPage = () => {
               target='__blank'
             >
               <FaFacebookSquare size={30} color='var(--principal-400)' />
+            </a>
+            <a
+              href='https://www.linkedin.com/in/lucas-louren%C3%A7o-794423188/'
+              title='https://www.linkedin.com/in/lucas-louren%C3%A7o-794423188/'
+              target='__blank'
+            >
+              <FaLinkedin size={30} color='var(--principal-400)' />
             </a>
             <a
               href='https://github.com/lucas-lourencoo'
