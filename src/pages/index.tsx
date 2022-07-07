@@ -65,8 +65,8 @@ const Home: NextPage = () => {
               <FaFacebookSquare size={30} color='var(--principal-400)' />
             </a>
             <a
-              href='https://www.linkedin.com/in/lucas-louren%C3%A7o-794423188/'
-              title='https://www.linkedin.com/in/lucas-louren%C3%A7o-794423188/'
+              href='https://www.linkedin.com/in/lucas-lourenco2802'
+              title='https://www.linkedin.com/in/lucas-lourenco2802'
               target='__blank'
             >
               <FaLinkedin size={30} color='var(--principal-400)' />
