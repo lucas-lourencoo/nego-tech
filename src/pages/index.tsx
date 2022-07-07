@@ -8,8 +8,26 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import { useEffect, useRef } from 'react';
 
 const Home: NextPage = () => {
+  const refAbout = useRef(null);
+  const refProjects = useRef(null);
+
+  useEffect(() => {
+    async function animate() {
+      if (refAbout.current) {
+        const sr = (await import('scrollreveal')).default;
+        sr().reveal(refAbout.current, { delay: 700, duration: 1200 });
+      }
+      if (refProjects.current) {
+        const sr = (await import('scrollreveal')).default;
+        sr().reveal(refProjects.current, { delay: 700, duration: 1200 });
+      }
+    }
+    animate();
+  }, []);
+
   return (
     <main>
       <Container id='home'>
@@ -82,7 +100,7 @@ const Home: NextPage = () => {
         </div>
       </Container>
 
-      <About id='about'>
+      <About id='about' ref={refAbout}>
         <div className='aboutMe'>
           <h2>Sobre mim</h2>
           <h3>Lucas Lourenço Silva</h3>
@@ -133,7 +151,7 @@ const Home: NextPage = () => {
         </div>
       </About>
 
-      <Projects id='projects'>
+      <Projects id='projects' ref={refProjects}>
         <h2>Portfólio</h2>
         <h3>Alguns dos meus projetos</h3>
 
