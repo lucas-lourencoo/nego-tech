@@ -4,8 +4,8 @@ import Document, {
   Main,
   NextScript,
   Head,
-} from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+} from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -29,45 +29,45 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang='pt-BR'>
+      <Html lang="pt-BR">
         <Head>
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <meta
-            name='title'
-            content='Nego Tech | Fullstack Dev - Web Designer'
+            name="title"
+            content="Nego Tech | Fullstack Dev - Web Designer"
           />
           <meta
-            name='description'
-            content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
+            name="description"
+            content="Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?"
           />
-          <meta property='og:type' content='website' />
-          <meta property='og:url' content='https://www.negotech.com.br/' />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.negotech.com.br/" />
           <meta
-            property='og:title'
-            content='Nego Tech | Fullstack Dev - Web Designer'
-          />
-          <meta
-            property='og:description'
-            content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
-          />
-          <meta property='og:image' content='/logo.png' />
-          <meta property='twitter:card' content='summary_large_image' />
-          <meta property='twitter:url' content='https://www.negotech.com.br/' />
-          <meta
-            property='twitter:title'
-            content='Nego Tech | Fullstack Dev - Web Designer'
+            property="og:title"
+            content="Nego Tech | Fullstack Dev - Web Designer"
           />
           <meta
-            property='twitter:description'
-            content='Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?'
+            property="og:description"
+            content="Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?"
           />
-          <meta property='twitter:image' content='/logo.png'></meta>
+          <meta property="og:image" content="/logo.png" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://www.negotech.com.br/" />
+          <meta
+            property="twitter:title"
+            content="Nego Tech | Fullstack Dev - Web Designer"
+          />
+          <meta
+            property="twitter:description"
+            content="Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?"
+          />
+          <meta property="twitter:image" content="/logo.png"></meta>
           <link
-            href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Roboto:wght@100;400;700;900&display=swap'
-            rel='stylesheet'
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Roboto:wght@100;400;700;900&display=swap"
+            rel="stylesheet"
           />
-          <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-FXPTBY2QE2`}
@@ -84,6 +84,11 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3626015253465428"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
