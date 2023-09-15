@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.section`
   min-height: calc(100vh - 7.5rem);
@@ -44,7 +44,7 @@ export const Container = styled.section`
     flex-direction: column;
 
     h1 {
-      font: 700 4.5rem/1.1 'Nunito', sans-serif;
+      font: 700 4.5rem/1.1 var(--font-nunito);
       margin-bottom: 1rem;
       letter-spacing: -1px;
       animation: appearText 1.5s forwards;
@@ -54,7 +54,7 @@ export const Container = styled.section`
         letter-spacing: -5.8px;
 
         & + span {
-          font-family: 'Roboto', sans-serif;
+          font-family: var(--font-roboto);
           font-weight: 100;
           letter-spacing: -4px;
           margin-left: -1.1rem;
@@ -80,7 +80,7 @@ export const Container = styled.section`
       box-shadow: 0px 4px 25px -10px rgba(0, 0, 0, 0.5);
       border-radius: 16px;
       padding: 0.9rem 1.5rem;
-      font-family: 'Nunito', sans-serif;
+      font-family: var(--font-nunito);
       color: var(--black);
       min-width: 10rem;
       font-size: 1rem;
@@ -201,12 +201,12 @@ export const About = styled.section`
 
   .aboutMe {
     h2 {
-      font: 700 1.25rem/1.1 'Nunito', sans-serif;
+      font: 700 1.25rem/1.1 var(--font-nunito);
       text-transform: uppercase;
       color: var(--principal-500);
     }
     h3 {
-      font: 500 3.4rem/1 'Nunito', sans-serif;
+      font: 500 3.4rem/1 var(--font-nunito);
       color: var(--gray-300);
       margin-bottom: 2rem;
     }
@@ -216,7 +216,7 @@ export const About = styled.section`
       font-size: 1.1rem;
       margin-bottom: 1rem;
       font-weight: 400;
-      font-family: 'Roboto', sans-serif;
+      font-family: var(--font-roboto);
     }
 
     ul {
@@ -282,7 +282,7 @@ export const About = styled.section`
     }
 
     ::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -319,12 +319,12 @@ export const Projects = styled.section`
   }
 
   h2 {
-    font: 700 1.25rem/1.1 'Nunito', sans-serif;
+    font: 700 1.25rem/1.1 var(--font-nunito);
     text-transform: uppercase;
     color: var(--principal-500);
   }
   h3 {
-    font: 500 3.4rem/1 'Nunito', sans-serif;
+    font: 500 3.4rem/1 var(--font-nunito);
     color: var(--gray-300);
     margin-bottom: 2rem;
   }

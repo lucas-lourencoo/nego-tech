@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.footer`
   display: flex;
@@ -21,7 +21,7 @@ export const Container = styled.footer`
     font-weight: 400;
     font-style: normal;
     color: var(--gray-600);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-roboto);
     font-size: 0.8rem;
   }
 `;

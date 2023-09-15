@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     position: relative;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-roboto);
     font-weight: 400;
     font-size: 1.125rem;
     background: var(--black);
@@ -31,17 +31,6 @@ export const GlobalStyle = createGlobalStyle`
       background: rgba(60,60,60,0.7);
       border: 6px solid var(--black);
     }
-
-    /* ::before{
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: url('/bg.png');
-      mix-blend-mode: darken;
-      z-index: -1;
-      opacity: .2;
-    } */
   }
 
   html {
@@ -54,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
   :root{
-    --black: #1C1C1E;
+    --black: #121212;
     --white: #F8F7FC;
     --principal-200: #AEF9FD;
     --principal-300: #89F3F9;
