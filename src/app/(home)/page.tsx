@@ -51,10 +51,11 @@ const Home: NextPage = () => {
       <Container id="home">
         <div className="text">
           <h1>
-            Seja bem-vindo <br /> à <span>NEGO</span> <span>TECH</span>
+            Olá! Eu sou o<br />
+            <span>NEGO</span> <span>TECH</span>
           </h1>
           <p>
-            Eu sou Lucas Lourenço e quero te ajudar com soluções de programação
+            Sou Lucas Lourenço e quero te ajudar com soluções de programação
             WEB. Vamos começar?
           </p>
 
@@ -189,10 +190,10 @@ const Home: NextPage = () => {
         id="about"
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ amount: 0.35, once: true }}
+        viewport={{ amount: 0.5, once: true }}
         variants={cardVariants}
       >
-        <div className="aboutMe">
+        <motion.div className="aboutMe" variants={cardVariants}>
           <h2>Sobre mim</h2>
           <h3>Lucas Lourenço Silva</h3>
 
@@ -319,9 +320,9 @@ const Home: NextPage = () => {
               </li>
             </ul>
           </article>
-        </div>
+        </motion.div>
 
-        <div className="images">
+        <motion.div className="images" variants={cardVariants}>
           <div className="left">
             <Image
               src="/lucas2.webp"
@@ -362,7 +363,7 @@ const Home: NextPage = () => {
               height={408}
             />
           </div>
-        </div>
+        </motion.div>
       </About>
 
       <Projects

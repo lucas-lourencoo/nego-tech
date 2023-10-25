@@ -156,8 +156,9 @@ export const Container = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
+
       a {
-        transition: 0.3s;
+        transition: 0.2s;
       }
 
       a:hover {

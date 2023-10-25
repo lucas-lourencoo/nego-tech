@@ -18,13 +18,13 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Nego Tech",
   description:
-    "Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?",
+    "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
   twitter: {
     card: "summary_large_image",
     site: "https://www.negotech.com.br/",
     title: "Nego Tech",
     description:
-      "Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?",
+      "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
     images: "/logo.png",
   },
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "https://www.negotech.com.br/",
     title: "Nego Tech",
     description:
-      "Eu sou Lucas Lourenço, e quero te ajudar com soluções de programação WEB e tecnologia em geral. Vamos começar?",
+      "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
     images: "/logo.png",
   },
 };
