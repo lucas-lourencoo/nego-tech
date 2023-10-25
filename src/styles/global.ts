@@ -58,8 +58,7 @@ export const GlobalStyle = createGlobalStyle`
     --gray-300: #DDE1E1;
     --gray-400: #D8DCDC;
     --gray-500: #BEC2C2;
-    --gray-600: #A4A7A7;
-    --gray-600: #8A8D8D;
+    --gray-600: #b3b5b5;
   }
 
   button, input, textarea, select{

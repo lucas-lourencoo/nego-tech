@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.section`
@@ -138,17 +139,6 @@ export const Container = styled.section`
   }
 
   .goDown {
-    @keyframes shineBrightLikeADiamont {
-      0% {
-        opacity: 0.5;
-        transform: translateY(-0.5rem);
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
     position: absolute;
     bottom: 0.5rem;
     display: flex;
@@ -181,7 +171,7 @@ export const Container = styled.section`
   }
 `;
 
-export const About = styled.section`
+export const About = styled(motion.section)`
   display: grid;
   align-items: center;
   justify-content: center;
@@ -238,6 +228,15 @@ export const About = styled.section`
           font-size: 1rem;
         }
       }
+    }
+
+    .technologies {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
     }
   }
 
@@ -308,7 +307,7 @@ export const About = styled.section`
   }
 `;
 
-export const Projects = styled.section`
+export const Projects = styled(motion.section)`
   max-width: 1120px;
   margin: 0 auto;
   gap: 2rem;

@@ -18,7 +18,7 @@ export default function Header() {
                 duration={1000}
                 href="#home"
               >
-                Home
+                HOME
               </Link>
             </li>
             <li>
@@ -29,7 +29,7 @@ export default function Header() {
                 offset={0}
                 duration={1000}
               >
-                Sobre mim
+                SOBRE
               </Link>
             </li>
             <li>
@@ -40,7 +40,7 @@ export default function Header() {
                 offset={-70}
                 duration={1000}
               >
-                Projetos
+                PROJETOS
               </Link>
             </li>
             <li>
@@ -48,7 +48,7 @@ export default function Header() {
                 href="https://api.whatsapp.com/send?phone=5567981611571&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20Site/Design."
                 target="__blank"
               >
-                Faça um orçamento
+                Entre em contato
               </a>
             </li>
           </ul>
