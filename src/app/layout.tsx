@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import { Nunito, Roboto } from "next/font/google";
 import StyledComponentsRegistry from "../lib/registry";
 import { Metadata } from "next";
@@ -47,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${roboto.variable} ${nunito.variable}`}>
       <head>
-        <Script id="meta-pixel">
+        <Script id="meta-pixel" strategy="beforeInteractive">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
