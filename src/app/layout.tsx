@@ -1,41 +1,40 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
-import { Nunito, Roboto } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import StyledComponentsRegistry from "../lib/registry";
 import { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 
-const nunito = Nunito({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-nunito",
+  variable: "--font-inter",
 });
 
-const roboto = Roboto({
-  weight: ["100", "400", "700", "900"],
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-roboto",
+  variable: "--font-space",
 });
 
 export const metadata: Metadata = {
-  title: "Nego Tech",
+  title: "Lucas Lourenço | Desenvolvedor Full-Stack",
   description:
-    "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
+    "Sou Lucas Lourenço, desenvolvedor Full-Stack com mais de 8 anos de experiência criando soluções web modernas e de alta performance.",
   twitter: {
     card: "summary_large_image",
     site: "https://www.negotech.com.br/",
-    title: "Nego Tech",
+    title: "Lucas Lourenço | Desenvolvedor Full-Stack",
     description:
-      "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
+      "Desenvolvedor Full-Stack com mais de 8 anos de experiência criando soluções web modernas.",
     images: "/logo.png",
   },
   openGraph: {
     type: "website",
     url: "https://www.negotech.com.br/",
-    title: "Nego Tech",
+    title: "Lucas Lourenço | Desenvolvedor Full-Stack",
     description:
-      "Sou Lucas Lourenço e quero te ajudar com soluções de programação WEB. Vamos começar?",
+      "Desenvolvedor Full-Stack com mais de 8 anos de experiência criando soluções web modernas.",
     images: "/logo.png",
   },
 };
@@ -46,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${roboto.variable} ${nunito.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <Script id="meta-pixel" strategy="beforeInteractive">
           {`!function(f,b,e,v,n,t,s)
