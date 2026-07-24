@@ -1,5 +1,5 @@
 import type { PortfolioContent } from "@/content/portfolio";
-import { ArrowUpRight } from "./icons";
+import { ArrowUpRight, GitHub, LinkedIn, Mail } from "./icons";
 import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 
@@ -26,14 +26,17 @@ export default function ContactPage({ content }: { content: PortfolioContent }) 
         </h1>
         <div className={styles.contactLinksOnly}>
           <a href={linkedinUrl} target="_blank" rel="noreferrer">
+            <LinkedIn />
             {linkedinLabel}
             <ArrowUpRight />
           </a>
           <a href={githubUrl} target="_blank" rel="noreferrer">
+            <GitHub />
             {githubLabel}
             <ArrowUpRight />
           </a>
           <a href={emailUrl}>
+            <Mail />
             {emailLabel}
             <ArrowUpRight />
           </a>

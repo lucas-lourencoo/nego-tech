@@ -56,9 +56,39 @@ export type AboutSegment = {
   highlight?: boolean;
 };
 
+export type SocialMetric = {
+  label: string;
+  value: string;
+  href: string;
+};
+
+export type MediaVideo = {
+  id: string;
+  title: string;
+  views: string;
+};
+
+export type MediaKitContent = {
+  eyebrow: string;
+  title: string;
+  introduction: string;
+  audienceTitle: string;
+  audience: SocialMetric[];
+  highlight: { value: string; label: string };
+  videosTitle: string;
+  videos: MediaVideo[];
+  linksTitle: string;
+};
+
 export type PortfolioContent = {
   locale: Locale;
-  nav: { about: string; projects: string; uses: string; contact: string };
+  nav: {
+    about: string;
+    projects: string;
+    uses: string;
+    "media-kit": string;
+    contact: string;
+  };
   hero: {
     kicker: string;
     title: string;
@@ -116,6 +146,7 @@ export type PortfolioContent = {
   about: AboutSegment[][];
   uses: UseCategory[];
   projects: ProjectCatalogue;
+  mediaKit: MediaKitContent;
   socialLinks: SocialLink[];
 };
 
@@ -132,6 +163,7 @@ const content: Record<Locale, PortfolioContent> = {
       about: "About",
       projects: "Projects",
       uses: "Uses",
+      "media-kit": "Media Kit",
       contact: "Contact",
     },
     hero: {
@@ -563,6 +595,63 @@ const content: Record<Locale, PortfolioContent> = {
         },
       ],
     },
+    mediaKit: {
+      eyebrow: "Creator profile",
+      title: "Media Kit",
+      introduction:
+        "Technology, music, faith, and everyday life — told through honest content and real experiences.",
+      audienceTitle: "Audience",
+      audience: [
+        {
+          label: "Instagram",
+          value: "1.3K+ followers",
+          href: "https://www.instagram.com/lucas_lourencoo_/",
+        },
+        {
+          label: "YouTube",
+          value: "300+ subscribers",
+          href: "https://www.youtube.com/@lucas_lourenco",
+        },
+        {
+          label: "LinkedIn",
+          value: "600+ connections",
+          href: "https://www.linkedin.com/in/lucas-lourenco2802/",
+        },
+        {
+          label: "GitHub",
+          value: "100+ stars",
+          href: "https://github.com/lucas-lourencoo",
+        },
+      ],
+      highlight: {
+        value: "10K+",
+        label: "views on the most popular video",
+      },
+      videosTitle: "Popular videos",
+      videos: [
+        {
+          id: "Uoy01i8ilN4",
+          title: "Papai Não Dorme | Lucas Lourenço",
+          views: "9.6K views",
+        },
+        {
+          id: "qfb0hzn4MGA",
+          title: "Estou Só | Lucas Lourenço",
+          views: "3.9K views",
+        },
+        {
+          id: "VO6n-ksqwkQ",
+          title: "Vou Ficar Aqui | Lucas Lourenço",
+          views: "2.8K views",
+        },
+        {
+          id: "00KAxC_NesQ",
+          title: "A Voz Que Eu Amo | Lucas Lourenço",
+          views: "2.4K views",
+        },
+      ],
+      linksTitle: "Find me online",
+    },
     socialLinks: [
       {
         label: "LinkedIn",
@@ -578,6 +667,7 @@ const content: Record<Locale, PortfolioContent> = {
       about: "Sobre",
       projects: "Projetos",
       uses: "Uses",
+      "media-kit": "Media Kit",
       contact: "Contato",
     },
     hero: {
@@ -1001,6 +1091,63 @@ const content: Record<Locale, PortfolioContent> = {
           ],
         },
       ],
+    },
+    mediaKit: {
+      eyebrow: "Perfil de criador",
+      title: "Media Kit",
+      introduction:
+        "Tecnologia, música, fé e vida real — contadas por meio de conteúdo honesto e experiências de verdade.",
+      audienceTitle: "Audiência",
+      audience: [
+        {
+          label: "Instagram",
+          value: "1,3 mil+ seguidores",
+          href: "https://www.instagram.com/lucas_lourencoo_/",
+        },
+        {
+          label: "YouTube",
+          value: "300+ inscritos",
+          href: "https://www.youtube.com/@lucas_lourenco",
+        },
+        {
+          label: "LinkedIn",
+          value: "600+ conexões",
+          href: "https://www.linkedin.com/in/lucas-lourenco2802/",
+        },
+        {
+          label: "GitHub",
+          value: "100+ estrelas",
+          href: "https://github.com/lucas-lourencoo",
+        },
+      ],
+      highlight: {
+        value: "10 mil+",
+        label: "visualizações no vídeo mais popular",
+      },
+      videosTitle: "Vídeos populares",
+      videos: [
+        {
+          id: "Uoy01i8ilN4",
+          title: "Papai Não Dorme | Lucas Lourenço",
+          views: "9,6 mil visualizações",
+        },
+        {
+          id: "qfb0hzn4MGA",
+          title: "Estou Só | Lucas Lourenço",
+          views: "3,9 mil visualizações",
+        },
+        {
+          id: "VO6n-ksqwkQ",
+          title: "Vou Ficar Aqui | Lucas Lourenço",
+          views: "2,8 mil visualizações",
+        },
+        {
+          id: "00KAxC_NesQ",
+          title: "A Voz Que Eu Amo | Lucas Lourenço",
+          views: "2,4 mil visualizações",
+        },
+      ],
+      linksTitle: "Me encontre por aí",
     },
     socialLinks: [
       {

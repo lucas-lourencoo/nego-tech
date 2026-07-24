@@ -2,7 +2,14 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.negotech.com.br";
 const languages = ["en", "pt"] as const;
-const pages = ["", "/about", "/projects", "/uses", "/contact"] as const;
+const pages = [
+  "",
+  "/about",
+  "/projects",
+  "/uses",
+  "/media-kit",
+  "/contact",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return languages.flatMap((language) =>

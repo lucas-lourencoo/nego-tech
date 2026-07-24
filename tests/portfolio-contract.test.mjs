@@ -46,6 +46,33 @@ test("uses content is typed and localized", async () => {
   assert.match(content, /NotebookLM/);
 });
 
+test("media kit content is typed, bilingual, and uses verified rounded metrics", async () => {
+  const content = await read("src/content/portfolio.ts");
+
+  assert.match(content, /export type SocialMetric/);
+  assert.match(content, /export type MediaVideo/);
+  assert.match(content, /export type MediaKitContent/);
+  assert.match(content, /mediaKit: MediaKitContent/);
+  assert.match(content, /title: "Media Kit"/);
+  assert.match(content, /1\.3K\+/);
+  assert.match(content, /300\+/);
+  assert.match(content, /600\+/);
+  assert.match(content, /100\+/);
+  assert.match(content, /10K\+/);
+
+  for (const videoId of [
+    "Uoy01i8ilN4",
+    "qfb0hzn4MGA",
+    "VO6n-ksqwkQ",
+    "00KAxC_NesQ",
+  ]) {
+    assert.match(content, new RegExp(videoId));
+  }
+
+  assert.doesNotMatch(content, /mediaKit[\s\S]*pricing:/);
+  assert.doesNotMatch(content, /mediaKit[\s\S]*resume:/);
+});
+
 test("projects content is typed, localized, and deliberately curated", async () => {
   const content = await read("src/content/portfolio.ts");
 
@@ -111,7 +138,7 @@ test("the shared navigation uses localized routes and marks the active page", as
   assert.match(shell, /aria-current/);
   assert.match(
     shell,
-    /const pages = \["about", "projects", "uses", "contact"\]/,
+    /const pages = \["about", "projects", "uses", "media-kit", "contact"\]/,
   );
   assert.doesNotMatch(shell, /"experience"/);
   assert.match(shell, /href=\{`\/\$\{content\.locale\}\/\$\{page\}`\}/);
@@ -371,6 +398,43 @@ test("the uses page renders editorial categories and external links", async () =
   assert.match(uses, /rel="noreferrer"/);
 });
 
+test("the media kit renders creator metrics and popular videos without a sales pitch", async () => {
+  const page = await read("src/components/Portfolio/MediaKitPage.tsx");
+  const styles = await read("src/components/Portfolio/styles.module.css");
+
+  assert.match(page, /activePage="media-kit"/);
+  assert.match(page, /mediaKit\.audience\.map/);
+  assert.match(page, /mediaKit\.videos\.map/);
+  assert.match(page, /i\.ytimg\.com\/vi/);
+  assert.match(page, /target="_blank"/);
+  assert.match(page, /rel="noreferrer"/);
+  assert.match(page, /ArrowUpRight/);
+  assert.match(styles, /\.mediaKitPage/);
+  assert.match(styles, /\.mediaMetrics/);
+  assert.match(styles, /\.mediaVideos/);
+  assert.doesNotMatch(page, /mediaKit\.formats|Partnership|parceria/);
+});
+
+test("media kit is integrated into localized routes and discovery", async () => {
+  const route = await read("src/app/(portfolio)/[lang]/media-kit/page.tsx");
+  const types = await read("src/components/Portfolio/types.ts");
+  const shell = await read("src/components/Portfolio/SiteShell.tsx");
+  const content = await read("src/content/portfolio.ts");
+  const metadata = await read("src/lib/portfolio-metadata.ts");
+  const sitemap = await read("src/app/sitemap.ts");
+
+  assert.match(route, /createPortfolioMetadata\(lang, "media-kit"\)/);
+  assert.match(route, /<MediaKitPage content=\{getPortfolioContent\(lang\)\} \/>/);
+  assert.match(types, /"media-kit"/);
+  assert.match(
+    shell,
+    /const pages = \["about", "projects", "uses", "media-kit", "contact"\]/,
+  );
+  assert.match(content, /"media-kit": "Media Kit"/);
+  assert.match(metadata, /Media Kit — Lucas Lourenço/);
+  assert.match(sitemap, /"\/media-kit"/);
+});
+
 test("the projects route renders an accessible editorial catalogue", async () => {
   const route = await read("src/app/(portfolio)/[lang]/projects/page.tsx");
   const page = await read("src/components/Portfolio/ProjectsPage.tsx");
@@ -418,11 +482,11 @@ test("projects is integrated into localized navigation and discovery", async () 
 
   assert.match(
     types,
-    /"home"\s*\|\s*"about"\s*\|\s*"projects"\s*\|\s*"uses"\s*\|\s*"contact"/,
+    /"home"\s*\|\s*"about"\s*\|\s*"projects"\s*\|\s*"uses"\s*\|\s*"media-kit"\s*\|\s*"contact"/,
   );
   assert.match(
     shell,
-    /const pages = \["about", "projects", "uses", "contact"\]/,
+    /const pages = \["about", "projects", "uses", "media-kit", "contact"\]/,
   );
   assert.match(content, /projects: "Projects"/);
   assert.match(content, /projects: "Projetos"/);
@@ -459,7 +523,7 @@ test("localized routes statically generate both supported languages", async () =
 });
 
 test("all localized portfolio pages statically generate with metadata", async () => {
-  for (const page of ["about", "projects", "uses", "contact"]) {
+  for (const page of ["about", "projects", "uses", "media-kit", "contact"]) {
     const route = await read(`src/app/(portfolio)/[lang]/${page}/page.tsx`);
     assert.match(route, /generateStaticParams/);
     assert.match(route, /generateMetadata/);

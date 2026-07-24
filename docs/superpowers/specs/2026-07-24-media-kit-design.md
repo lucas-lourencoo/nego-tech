@@ -2,10 +2,10 @@
 
 ## Goal
 
-Add a bilingual media kit for brands and content partnerships. The page
-positions Lucas as a hybrid creator whose professional center is technology,
-with music, faith, and daily life providing personal context. It must remain
-distinct from the career-focused About page.
+Add a bilingual digital-presence profile. The page positions Lucas as a hybrid
+creator whose professional center is technology, with music, faith, and daily
+life providing personal context. It must remain distinct from the
+career-focused About page and avoid a commercial pitch.
 
 ## Content
 
@@ -18,17 +18,13 @@ It then presents rounded, manually maintained audience signals:
 - GitHub: 100+ stars
 - Most popular YouTube video: 10K+ views
 
-Content pillars are technology and development, music and faith, and everyday
-life. Available partnership formats are limited to Instagram posts/stories and
-dedicated or integrated YouTube videos.
-
-The page includes three popular YouTube videos with official thumbnails,
+The page includes four popular YouTube videos with official thumbnails,
 titles, rounded view counts, and external links. It ends with simple email,
 Instagram, and LinkedIn contact links.
 
-The page must not include a résumé, pricing, invented campaign results,
-previous brand partnerships, availability language, or recruiter-focused
-career detail.
+The page must not include an additional biography, content-pillar section,
+partnership formats, sales language, a résumé, pricing, campaign results,
+availability language, or recruiter-focused career detail.
 
 ## Visual Direction
 
@@ -38,9 +34,9 @@ form a compact link grid inspired by Biro's media kit. Numbered sections and
 subtle dividers borrow the clarity of Bero's commercial overview without
 copying its sales-heavy tone.
 
-Partnership formats render as editorial rows. Popular videos use a two-column
-desktop grid and a single mobile column. Hover states use the existing green
-border and external-arrow language. Mobile body text stays at 16–17px.
+Popular videos use a two-column desktop grid and a single mobile column. Hover
+states use the existing green border and external-arrow language. A neutral
+profile-link section closes the page. Mobile body text stays at 16–17px.
 
 ## Architecture
 

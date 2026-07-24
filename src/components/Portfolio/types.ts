@@ -3,4 +3,5 @@ export type PageSlug =
   | "about"
   | "projects"
   | "uses"
+  | "media-kit"
   | "contact";

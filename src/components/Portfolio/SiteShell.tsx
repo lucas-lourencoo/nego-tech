@@ -23,7 +23,7 @@ type SiteShellProps = {
   showFooter?: boolean;
 };
 
-const pages = ["about", "projects", "uses", "contact"] as const;
+const pages = ["about", "projects", "uses", "media-kit", "contact"] as const;
 type NavPage = (typeof pages)[number];
 
 type Indicator = {
@@ -50,6 +50,7 @@ export default function SiteShell({
     visible: false,
   });
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const selectIndicator = useCallback((page?: NavPage) => {
     const nav = navRef.current;
@@ -149,7 +150,7 @@ export default function SiteShell({
 
         <nav
           ref={navRef}
-          className={styles.nav}
+          className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}
           aria-label="Primary navigation"
           style={navStyle}
           onPointerLeave={restoreIndicator}
@@ -166,6 +167,7 @@ export default function SiteShell({
               aria-current={activePage === page ? "page" : undefined}
               onPointerEnter={() => selectIndicator(page)}
               onFocus={() => selectIndicator(page)}
+              onClick={() => setIsMenuOpen(false)}
             >
               {content.nav[page]}
             </Link>
@@ -184,6 +186,17 @@ export default function SiteShell({
         >
           {content.locale.toUpperCase()} / {alternateLocale.toUpperCase()}
         </Link>
+
+        <button
+          className={styles.menuToggle}
+          type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+        </button>
       </header>
 
       <main>{children}</main>

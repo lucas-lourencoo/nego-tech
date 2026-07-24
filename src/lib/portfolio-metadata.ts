@@ -25,6 +25,11 @@ const metadata = {
       description:
         "The hardware, software, apps, and AI tools Lucas Lourenço uses every day.",
     },
+    "media-kit": {
+      title: "Media Kit — Lucas Lourenço",
+      description:
+        "Audience, content pillars, partnership formats, and popular videos by Lucas Lourenço.",
+    },
     contact: {
       title: "Contact — Lucas Lourenço",
       description: "Contact Lucas Lourenço through LinkedIn or email.",
@@ -49,6 +54,11 @@ const metadata = {
       title: "Uses — Lucas Lourenço",
       description:
         "O hardware, software, os aplicativos e as ferramentas de IA que Lucas Lourenço usa todos os dias.",
+    },
+    "media-kit": {
+      title: "Media Kit — Lucas Lourenço",
+      description:
+        "Audiência, pilares de conteúdo, formatos de parceria e vídeos populares de Lucas Lourenço.",
     },
     contact: {
       title: "Contato — Lucas Lourenço",
