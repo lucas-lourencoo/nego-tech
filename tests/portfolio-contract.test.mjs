@@ -124,7 +124,7 @@ test("the shared navigation uses localized routes and marks the active page", as
   assert.match(styles, /\.header\s*\{[^}]*height:\s*64px/s);
   assert.match(styles, /--indicator-left/);
   assert.match(styles, /prefers-reduced-motion:\s*reduce/);
-  assert.match(styles, /\.wordmark\s*\{[^}]*font-size:\s*18px/s);
+  assert.match(styles, /\.wordmark\s*\{[^}]*font-size:\s*21px/s);
   assert.match(
     styles,
     /\.headerScrolled\s*\{[^}]*background:\s*rgba\(11,\s*11,\s*13,\s*0\.82\)/s,
@@ -146,7 +146,7 @@ test("the homepage uses a full-screen personal layout without profile cards", as
   assert.doesNotMatch(portfolio, /identityCard|avatarFrame/);
   assert.match(portfolio, /heroAvatar/);
   assert.match(portfolio, /51462903\.png/);
-  assert.match(shell, /LL<span[^>]*>\/<\/span>/);
+  assert.match(shell, /<span>&lt;<\/span>LL<span>\/&gt;<\/span>/);
   assert.match(portfolio, /heroActions/);
   assert.doesNotMatch(portfolio, /availability/);
   assert.doesNotMatch(portfolio, /heroFacts|quickHint|Resume\.pdf|resumeCta|Résumé/);
@@ -454,4 +454,19 @@ test("advertising tracking and the old client-only architecture are removed", as
   assert.equal(packageJson.dependencies["framer-motion"], undefined);
   assert.equal(packageJson.dependencies["react-scroll"], undefined);
   assert.equal(packageJson.dependencies["@radix-ui/react-navigation-menu"], undefined);
+});
+
+test("the LL identity is shared by the header and favicon", async () => {
+  const shell = await read("src/components/Portfolio/SiteShell.tsx");
+  const styles = await read("src/components/Portfolio/styles.module.css");
+  const icon = await read("src/app/icon.svg");
+  const wordmark = styles.match(/\.wordmark\s*\{[^}]*\}/s)?.[0] ?? "";
+
+  assert.match(shell, /<span>&lt;<\/span>LL<span>\/&gt;<\/span>/);
+  assert.match(wordmark, /margin-left:\s*10px/);
+  assert.match(wordmark, /font-size:\s*21px/);
+  assert.match(icon, /<svg/);
+  assert.match(icon, />LL</);
+  assert.match(icon, /#b7ff4a/i);
+  assert.match(icon, /#0b0b0d/i);
 });

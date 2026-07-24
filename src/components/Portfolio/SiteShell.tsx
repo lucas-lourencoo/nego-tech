@@ -144,7 +144,7 @@ export default function SiteShell({
           href={`/${content.locale}`}
           aria-label="Lucas Lourenço"
         >
-          LL<span>/</span>
+          <span>&lt;</span>LL<span>/&gt;</span>
         </Link>
 
         <nav
