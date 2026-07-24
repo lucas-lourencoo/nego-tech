@@ -99,6 +99,7 @@ test("projects content is typed, localized, and deliberately curated", async () 
     "AGF Garantidora",
     "Juventude UP",
     "Viamaq",
+    "B&S Consultoria",
     "IEDUCAA",
     "Israel Profético",
     "Missão Paraguai",

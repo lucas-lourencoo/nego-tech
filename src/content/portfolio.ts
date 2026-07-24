@@ -555,6 +555,13 @@ const content: Record<Locale, PortfolioContent> = {
               href: "https://www.agfgarantidora.com.br/",
             },
             {
+              name: "B&S Consultoria",
+              description:
+                "Institutional website for a consulting and training company.",
+              category: "Website",
+              href: "https://consultoriabes.com.br/",
+            },
+            {
               name: "Juventude UP",
               description: "Digital home for a youth community.",
               category: "Community",
@@ -1048,6 +1055,13 @@ const content: Record<Locale, PortfolioContent> = {
                 "Plataforma institucional para garantias financeiras.",
               category: "Site",
               href: "https://www.agfgarantidora.com.br/",
+            },
+            {
+              name: "B&S Consultoria",
+              description:
+                "Site institucional para uma empresa de consultoria e treinamentos.",
+              category: "Site",
+              href: "https://consultoriabes.com.br/",
             },
             {
               name: "Juventude UP",
