@@ -66,6 +66,31 @@ export type PortfolioContent = {
     primaryCta: string;
     aboutCta: string;
   };
+  widgets: {
+    github: {
+      title: string;
+      contribution: string;
+      contributions: string;
+      less: string;
+      more: string;
+      unavailable: string;
+    };
+    weather: {
+      title: string;
+      loading: string;
+      unavailable: string;
+      attribution: string;
+      conditions: {
+        clear: string;
+        cloudy: string;
+        fog: string;
+        drizzle: string;
+        rain: string;
+        snow: string;
+        storm: string;
+      };
+    };
+  };
   labels: {
     experience: string;
     experienceDescription: string;
@@ -115,6 +140,31 @@ const content: Record<Locale, PortfolioContent> = {
       description: "Building thoughtful software for complex products.",
       primaryCta: "Connect on LinkedIn",
       aboutCta: "More about me",
+    },
+    widgets: {
+      github: {
+        title: "GitHub activity",
+        contribution: "contribution in the last year",
+        contributions: "contributions in the last year",
+        less: "Less",
+        more: "More",
+        unavailable: "Activity is taking a short break.",
+      },
+      weather: {
+        title: "Local weather",
+        loading: "Looking outside…",
+        unavailable: "The forecast wandered off.",
+        attribution: "Weather by Open-Meteo",
+        conditions: {
+          clear: "Clear",
+          cloudy: "Cloudy",
+          fog: "Foggy",
+          drizzle: "Drizzle",
+          rain: "Rain",
+          snow: "Snow",
+          storm: "Storm",
+        },
+      },
     },
     labels: {
       experience: "Experience",
@@ -536,6 +586,31 @@ const content: Record<Locale, PortfolioContent> = {
       description: "Construindo software cuidadoso para produtos complexos.",
       primaryCta: "Conectar no LinkedIn",
       aboutCta: "Saiba mais",
+    },
+    widgets: {
+      github: {
+        title: "Atividade no GitHub",
+        contribution: "contribuição no último ano",
+        contributions: "contribuições no último ano",
+        less: "Menos",
+        more: "Mais",
+        unavailable: "A atividade tirou uma pausa rápida.",
+      },
+      weather: {
+        title: "Clima local",
+        loading: "Olhando pela janela…",
+        unavailable: "A previsão saiu para passear.",
+        attribution: "Clima por Open-Meteo",
+        conditions: {
+          clear: "Céu limpo",
+          cloudy: "Nublado",
+          fog: "Neblina",
+          drizzle: "Garoa",
+          rain: "Chuva",
+          snow: "Neve",
+          storm: "Tempestade",
+        },
+      },
     },
     labels: {
       experience: "Experiência",

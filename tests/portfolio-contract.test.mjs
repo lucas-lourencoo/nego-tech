@@ -170,6 +170,57 @@ test("the homepage renders only the hero and links to about", async () => {
   assert.doesNotMatch(home, /id="experience"|id="about"|id="contact"/);
 });
 
+test("the homepage includes localized GitHub activity and desktop-only weather", async () => {
+  const home = await read("src/components/Portfolio/index.tsx");
+  const github = await read(
+    "src/components/Portfolio/live-widgets/GitHubActivityCard.tsx",
+  );
+  const weather = await read(
+    "src/components/Portfolio/live-widgets/WeatherCard.tsx",
+  );
+  const content = await read("src/content/portfolio.ts");
+  const styles = await read("src/components/Portfolio/styles.module.css");
+
+  assert.match(home, /GitHubActivityCard/);
+  assert.match(home, /WeatherCard/);
+  assert.match(home, /content\.widgets\.github/);
+  assert.match(home, /content\.widgets\.weather/);
+  assert.match(github, /\/api\/github-activity/);
+  assert.match(github, /slice\(-371\)/);
+  assert.match(weather, /matchMedia\("\(min-width: 761px\)"\)/);
+  assert.match(weather, /https:\/\/ipapi\.co\/json\//);
+  assert.match(weather, /latitude: -20\.4428/);
+  assert.match(weather, /\/api\/weather/);
+  assert.match(content, /title: "GitHub activity"/);
+  assert.match(content, /title: "Atividade no GitHub"/);
+  assert.match(content, /title: "Local weather"/);
+  assert.match(content, /title: "Clima local"/);
+  assert.match(
+    styles,
+    /@media \(max-width: 760px\)[\s\S]*\.weatherCard\s*\{[^}]*display:\s*none/,
+  );
+});
+
+test("live data routes validate and cache their provider requests", async () => {
+  const githubRoute = await read("src/app/api/github-activity/route.ts");
+  const weatherRoute = await read("src/app/api/weather/route.ts");
+
+  assert.match(
+    githubRoute,
+    /github-contributions-api\.jogruber\.de\/v4\/lucas-lourencoo\?y=last/,
+  );
+  assert.match(githubRoute, /revalidate: CACHE_SECONDS/);
+  assert.match(githubRoute, /s-maxage=\$\{CACHE_SECONDS\}/);
+  assert.match(weatherRoute, /api\.open-meteo\.com\/v1\/forecast/);
+  assert.match(weatherRoute, /current: "temperature_2m,weather_code"/);
+  assert.match(weatherRoute, /daily: "weather_code,temperature_2m_max"/);
+  assert.match(weatherRoute, /forecast_days: "6"/);
+  assert.match(weatherRoute, /parseCoordinate\(searchParams\.get\("latitude"\), -90, 90\)/);
+  assert.match(weatherRoute, /parseCoordinate\(searchParams\.get\("longitude"\), -180, 180\)/);
+  assert.match(weatherRoute, /status: 400/);
+  assert.match(weatherRoute, /60 \* 30/);
+});
+
 test("the hero name types once with a thick blinking caret and reduced-motion fallback", async () => {
   const home = await read("src/components/Portfolio/index.tsx");
   const typingName = await read("src/components/Portfolio/TypingName.tsx");
