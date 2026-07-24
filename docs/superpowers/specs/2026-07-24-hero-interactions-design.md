@@ -8,12 +8,12 @@ Add personality to the homepage through a deliberate correction in the name typi
 
 The name types one character at a time at the existing pace. At the cedilla position, it follows this sequence:
 
-1. `Lucas LourenC`
-2. Pause for approximately 250ms.
-3. Remove the `C`.
-4. Pause for approximately 120ms.
+1. `Lucas Lourenc`
+2. Pause for approximately 400ms.
+3. Remove the `c`.
+4. Pause for approximately 220ms.
 5. Type `ç`.
-6. Continue with `o`.
+6. Pause for approximately 180ms and continue with `o`.
 
 The insertion caret stays beside the current text throughout the sequence and begins blinking only after the final `o`. The title keeps its reserved dimensions so no surrounding content moves. Users who prefer reduced motion see the complete correct name immediately.
 

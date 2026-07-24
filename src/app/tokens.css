@@ -1,0 +1,20 @@
+:root {
+  --canvas: #0b0b0d;
+  --surface: #111113;
+  --surface-raised: #151518;
+  --surface-hover: #19191d;
+  --line: #29292f;
+  --line-strong: #3a3a43;
+  --text: #f2f1ed;
+  --muted: #a09fa7;
+  --muted-strong: #c8c6cd;
+  --accent: #c7ff5e;
+  --accent-soft: rgba(199, 255, 94, 0.12);
+  --violet: #9092ff;
+  --max-width: 1180px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
