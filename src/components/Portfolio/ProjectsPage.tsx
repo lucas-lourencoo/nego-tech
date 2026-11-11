@@ -1,5 +1,7 @@
 import type { PortfolioContent } from "@/content/portfolio";
 import { ArrowUpRight } from "./icons";
+import Reveal from "./motion/Reveal";
+import SpotlightCard from "./motion/SpotlightCard";
 import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 
@@ -13,28 +15,27 @@ export default function ProjectsPage({
   return (
     <SiteShell content={content} activePage="projects">
       <article className={styles.projectsPage}>
-        <header className={styles.projectsHeader}>
+        <Reveal as="header" className={styles.projectsHeader}>
           <h1>{projects.title}</h1>
           <p>{projects.introduction}</p>
-        </header>
+        </Reveal>
 
         <section className={styles.featuredSection}>
           <h2>{projects.featuredTitle}</h2>
           <div className={styles.featuredProjects}>
-            {projects.featured.map((project) => (
-              <a
-                className={styles.featuredProject}
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-                key={project.name}
-                aria-label={`${project.name} — ${project.category}`}
-              >
-                <span>{project.category}</span>
-                <strong>{project.name}</strong>
-                <p>{project.description}</p>
-                <ArrowUpRight />
-              </a>
+            {projects.featured.map((project, index) => (
+              <Reveal key={project.name} delay={index * 0.08}>
+                <SpotlightCard
+                  className={styles.featuredProject}
+                  href={project.href}
+                  ariaLabel={`${project.name} — ${project.category}`}
+                >
+                  <span>{project.category}</span>
+                  <strong>{project.name}</strong>
+                  <p>{project.description}</p>
+                  <ArrowUpRight />
+                </SpotlightCard>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -43,11 +44,11 @@ export default function ProjectsPage({
           <h2>{projects.archiveTitle}</h2>
           <div className={styles.projectArchive}>
             {projects.groups.map((group) => (
-              <section className={styles.projectGroup} key={group.title}>
+              <Reveal as="section" className={styles.projectGroup} key={group.title}>
                 <h3>{group.title}</h3>
                 <ul>
-                  {group.items.map((project) => (
-                    <li key={project.name}>
+                  {group.items.map((project, index) => (
+                    <Reveal as="li" key={project.name} delay={index * 0.05}>
                       <a
                         href={project.href}
                         target="_blank"
@@ -62,10 +63,10 @@ export default function ProjectsPage({
                           <ArrowUpRight />
                         </span>
                       </a>
-                    </li>
+                    </Reveal>
                   ))}
                 </ul>
-              </section>
+              </Reveal>
             ))}
           </div>
         </section>

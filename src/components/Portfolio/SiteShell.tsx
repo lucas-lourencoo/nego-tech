@@ -1,5 +1,7 @@
 "use client";
 
+import { useLenis } from "lenis/react";
+import { MotionConfig } from "motion/react";
 import Link from "next/link";
 import {
   type CSSProperties,
@@ -13,6 +15,10 @@ import {
 } from "react";
 import type { PortfolioContent } from "@/content/portfolio";
 import CustomCursor from "./CustomCursor";
+import EdgeBlur from "./motion/EdgeBlur";
+import { isPreloaderActive } from "./motion/preloaderState";
+import RollingLabel from "./motion/RollingLabel";
+import ScrollProgress from "./motion/ScrollProgress";
 import type { PageSlug } from "./types";
 import styles from "./styles.module.css";
 
@@ -51,6 +57,9 @@ export default function SiteShell({
   });
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [rollingPage, setRollingPage] = useState<NavPage>();
+  const lenis = useLenis();
+  const isScrollablePage = activePage !== "home";
 
   const selectIndicator = useCallback((page?: NavPage) => {
     const nav = navRef.current;
@@ -92,8 +101,26 @@ export default function SiteShell({
     };
   }, []);
 
+  useEffect(() => {
+    if (!lenis) return;
+    if (isMenuOpen || isPreloaderActive()) lenis.stop();
+    else lenis.start();
+  }, [isMenuOpen, lenis]);
+
+  const handleNavLeave = () => {
+    setRollingPage(undefined);
+    restoreIndicator();
+  };
+
   const handleBlur = (event: FocusEvent<HTMLElement>) => {
-    if (!event.currentTarget.contains(event.relatedTarget)) restoreIndicator();
+    if (event.currentTarget.contains(event.relatedTarget)) return;
+    setRollingPage(undefined);
+    restoreIndicator();
+  };
+
+  const highlightPage = (page: NavPage) => {
+    setRollingPage(page);
+    selectIndicator(page);
   };
 
   const navStyle = {
@@ -128,8 +155,10 @@ export default function SiteShell({
   };
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <CustomCursor />
+      {isScrollablePage && <ScrollProgress />}
+      {isScrollablePage && <EdgeBlur />}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -153,7 +182,7 @@ export default function SiteShell({
           className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}
           aria-label="Primary navigation"
           style={navStyle}
-          onPointerLeave={restoreIndicator}
+          onPointerLeave={handleNavLeave}
           onBlur={handleBlur}
         >
           <span className={styles.navIndicator} aria-hidden="true" />
@@ -165,11 +194,14 @@ export default function SiteShell({
               }}
               href={`/${content.locale}/${page}`}
               aria-current={activePage === page ? "page" : undefined}
-              onPointerEnter={() => selectIndicator(page)}
-              onFocus={() => selectIndicator(page)}
+              onPointerEnter={() => highlightPage(page)}
+              onFocus={() => highlightPage(page)}
               onClick={() => setIsMenuOpen(false)}
             >
-              {content.nav[page]}
+              <RollingLabel
+                label={content.nav[page]}
+                active={rollingPage === page}
+              />
             </Link>
           ))}
         </nav>
@@ -205,8 +237,11 @@ export default function SiteShell({
         <footer className={styles.footer}>
           <p>© {new Date().getFullYear()} Lucas Lourenço</p>
           <span>{content.labels.footer}</span>
+          <a href="https://skiper-ui.com/" target="_blank" rel="noreferrer">
+            {content.labels.motionCredit}
+          </a>
         </footer>
       )}
-    </>
+    </MotionConfig>
   );
 }

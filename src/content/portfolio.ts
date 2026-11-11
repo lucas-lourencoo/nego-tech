@@ -138,6 +138,7 @@ export type PortfolioContent = {
     contactDescription: string;
     linkedinCta: string;
     footer: string;
+    motionCredit: string;
   };
   experiences: Experience[];
   education: Education[];
@@ -218,6 +219,7 @@ const content: Record<Locale, PortfolioContent> = {
         "I’m interested in international software engineering roles and product-minded teams working on meaningful problems.",
       linkedinCta: "Start a conversation on LinkedIn",
       footer: "Designed and built by Lucas Lourenço.",
+      motionCredit: "Motion components by Skiper UI",
     },
     experiences: [
       {
@@ -383,6 +385,16 @@ const content: Record<Locale, PortfolioContent> = {
             name: "Fish shell",
             description: "Autocomplete that feels like magic.",
             href: "https://fishshell.com/",
+          },
+          {
+            name: "Skiper UI",
+            description: "Animated components behind this site's motion.",
+            href: "https://skiper-ui.com/",
+          },
+          {
+            name: "Lenis",
+            description: "Smooth scroll that still feels native.",
+            href: "https://lenis.darkroom.engineering/",
           },
         ],
       },
@@ -729,6 +741,7 @@ const content: Record<Locale, PortfolioContent> = {
         "Tenho interesse em posições internacionais de engenharia de software e times orientados a produto trabalhando em problemas relevantes.",
       linkedinCta: "Iniciar conversa no LinkedIn",
       footer: "Design e desenvolvimento por Lucas Lourenço.",
+      motionCredit: "Componentes de animação por Skiper UI",
     },
     experiences: [
       {
@@ -885,6 +898,16 @@ const content: Record<Locale, PortfolioContent> = {
             name: "Fish shell",
             description: "Autocomplete que parece mágica.",
             href: "https://fishshell.com/",
+          },
+          {
+            name: "Skiper UI",
+            description: "Componentes animados por trás do motion deste site.",
+            href: "https://skiper-ui.com/",
+          },
+          {
+            name: "Lenis",
+            description: "Scroll suave que ainda parece nativo.",
+            href: "https://lenis.darkroom.engineering/",
           },
         ],
       },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { PortfolioContent } from "@/content/portfolio";
+import Reveal from "./motion/Reveal";
 import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 
@@ -75,7 +76,7 @@ export default function AboutPage({ content }: { content: PortfolioContent }) {
           <h2 id="career-title">{content.labels.career}</h2>
           <div className={styles.careerList}>
             {content.experiences.map((experience, index) => (
-              <article className={styles.careerItem} key={experience.company}>
+              <Reveal as="article" className={styles.careerItem} key={experience.company}>
                 <h3>{experience.role}</h3>
                 <p className={styles.careerCompany}>
                   {experience.company}
@@ -88,7 +89,7 @@ export default function AboutPage({ content }: { content: PortfolioContent }) {
                     <span key={skill}>{skill}</span>
                   ))}
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
