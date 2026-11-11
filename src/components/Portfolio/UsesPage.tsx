@@ -1,5 +1,6 @@
 import type { PortfolioContent } from "@/content/portfolio";
 import { ArrowUpRight } from "./icons";
+import Reveal from "./motion/Reveal";
 import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 
@@ -7,14 +8,18 @@ export default function UsesPage({ content }: { content: PortfolioContent }) {
   return (
     <SiteShell content={content} activePage="uses">
       <article className={styles.usesPage}>
-        <header className={styles.usesHeader}>
+        <Reveal as="header" className={styles.usesHeader}>
           <h1>{content.labels.usesTitle}</h1>
           <p>{content.labels.usesIntroduction}</p>
-        </header>
+        </Reveal>
 
         <div className={styles.usesCategories}>
           {content.uses.map((category) => (
-            <section className={styles.usesCategory} key={category.title}>
+            <Reveal
+              as="section"
+              className={styles.usesCategory}
+              key={category.title}
+            >
               <h2>{category.title}</h2>
               <ul>
                 {category.items.map((item) => (
@@ -37,7 +42,7 @@ export default function UsesPage({ content }: { content: PortfolioContent }) {
                   </li>
                 ))}
               </ul>
-            </section>
+            </Reveal>
           ))}
         </div>
       </article>

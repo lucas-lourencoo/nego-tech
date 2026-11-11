@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { isPreloaderActive, preloaderDoneEvent } from "./motion/preloaderState";
 import styles from "./styles.module.css";
 
 type TypingNameProps = {
@@ -71,8 +72,20 @@ export default function TypingName({ text }: TypingNameProps) {
       }
     };
 
-    timeout = window.setTimeout(advance, typingInterval);
-    return () => window.clearTimeout(timeout);
+    const start = () => {
+      timeout = window.setTimeout(advance, typingInterval);
+    };
+
+    if (isPreloaderActive()) {
+      window.addEventListener(preloaderDoneEvent, start, { once: true });
+    } else {
+      start();
+    }
+
+    return () => {
+      window.removeEventListener(preloaderDoneEvent, start);
+      window.clearTimeout(timeout);
+    };
   }, [text]);
 
   const isComplete = displayedText === text;

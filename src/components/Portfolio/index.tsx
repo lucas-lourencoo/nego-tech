@@ -6,6 +6,7 @@ import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 import TypingName from "./TypingName";
 import GitHubActivityCard from "./live-widgets/GitHubActivityCard";
+import HeroBackground from "./motion/HeroBackground";
 import WeatherCard from "./live-widgets/WeatherCard";
 
 type PortfolioProps = {
@@ -18,6 +19,7 @@ export default function Portfolio({ content }: PortfolioProps) {
   return (
     <SiteShell content={content} activePage="home" showFooter={false}>
       <section className={styles.hero} aria-labelledby="hero-title">
+        <HeroBackground />
         <div className={styles.heroDashboard}>
           <div className={styles.heroMain}>
             <div className={styles.heroContent}>

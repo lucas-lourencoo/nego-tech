@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../../globals.css";
+import Preloader from "@/components/Portfolio/motion/Preloader";
+import { preloaderBootScript } from "@/components/Portfolio/motion/preloaderState";
+import SmoothScroll from "@/components/Portfolio/motion/SmoothScroll";
 import { getPortfolioContent, isLocale, locales } from "@/content/portfolio";
 
 const geist = Geist({
@@ -88,8 +91,14 @@ export default async function PortfolioLayout({
     <html
       lang={lang === "pt" ? "pt-BR" : "en"}
       className={`${geist.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <script dangerouslySetInnerHTML={{ __html: preloaderBootScript }} />
+        <Preloader />
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

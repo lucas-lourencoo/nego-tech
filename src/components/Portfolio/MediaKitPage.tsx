@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { PortfolioContent } from "@/content/portfolio";
 import { ArrowUpRight } from "./icons";
+import CountUp from "./motion/CountUp";
+import Reveal from "./motion/Reveal";
 import SiteShell from "./SiteShell";
 import styles from "./styles.module.css";
 
@@ -33,11 +35,11 @@ export default function MediaKitPage({
   return (
     <SiteShell content={content} activePage="media-kit">
       <article className={styles.mediaKitPage}>
-        <header className={styles.mediaKitHeader}>
+        <Reveal as="header" className={styles.mediaKitHeader}>
           <span>{mediaKit.eyebrow}</span>
           <h1>{mediaKit.title}</h1>
           <p>{mediaKit.introduction}</p>
-        </header>
+        </Reveal>
 
         <section className={styles.mediaSection}>
           <div className={styles.mediaSectionHeading}>
@@ -53,13 +55,17 @@ export default function MediaKitPage({
                 key={metric.label}
               >
                 <span>{metric.label}</span>
-                <strong>{metric.value}</strong>
+                <strong>
+                  <CountUp value={metric.value} locale={content.locale} />
+                </strong>
                 <ArrowUpRight size={15} />
               </a>
             ))}
           </div>
           <div className={styles.mediaHighlight}>
-            <strong>{mediaKit.highlight.value}</strong>
+            <strong>
+              <CountUp value={mediaKit.highlight.value} locale={content.locale} />
+            </strong>
             <span>{mediaKit.highlight.label}</span>
           </div>
         </section>

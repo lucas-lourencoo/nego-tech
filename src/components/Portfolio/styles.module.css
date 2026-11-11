@@ -144,11 +144,78 @@
     transform: none;
   }
 
+  .featuredProject::before {
+    transition: none;
+  }
+
+  .preloader {
+    display: none !important;
+  }
+
   .heroWidgets > .liveCard {
     animation: none;
     opacity: 1;
     translate: none;
   }
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  background: var(--canvas);
+  color: var(--text);
+  will-change: transform;
+}
+
+:global(html[data-preloader="active"]) .preloader {
+  display: grid;
+}
+
+.preloaderWordmark {
+  font-family: var(--font-mono);
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.preloaderWordmark span {
+  color: var(--accent);
+}
+
+.preloaderFooter {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  left: 28px;
+  display: grid;
+  gap: 12px;
+  justify-items: end;
+}
+
+.preloaderCounter {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.preloaderTrack {
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.preloaderLine {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
 }
 
 .customCursor {
@@ -205,6 +272,22 @@
   display: grid;
   place-items: center;
   padding: 84px 24px 24px;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 30%, transparent 100%);
+}
+
+.hero > .heroDashboard {
+  position: relative;
+  z-index: 1;
 }
 
 .heroDashboard {
@@ -389,6 +472,10 @@
   opacity: 0;
   translate: 0 -18px;
   animation: liveCardReveal 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+:global(html[data-preloader="active"]) .heroWidgets > .liveCard {
+  animation-play-state: paused;
 }
 
 @keyframes liveCardReveal {
@@ -1234,6 +1321,9 @@
 
 .featuredProject {
   position: relative;
+  isolation: isolate;
+  display: block;
+  height: 100%;
   min-height: 190px;
   padding: 24px;
   overflow: hidden;
@@ -1253,6 +1343,30 @@
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
   background: rgba(255, 255, 255, 0.045);
+}
+
+.featuredProject:hover {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg)) translateY(-3px);
+}
+
+.featuredProject::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(199, 255, 94, 0.13),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.featuredProject:hover::before {
+  opacity: 1;
 }
 
 .featuredProject > span {
@@ -1562,6 +1676,15 @@
   border-bottom: 1px solid var(--line-strong);
   color: var(--muted-strong);
   font-size: 13px;
+}
+
+.footer a {
+  color: var(--muted);
+  transition: color 160ms ease;
+}
+
+.footer a:hover {
+  color: var(--accent);
 }
 
 .footer {
