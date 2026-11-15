@@ -227,20 +227,20 @@ const content: Record<Locale, PortfolioContent> = {
         role: "Full Stack Developer",
         period: "May 2025 — Present",
         summary:
-          "Building full-stack features and AI-powered recruiting workflows across a modern HR-tech ecosystem.",
-        skills: ["React", "Next.js", "NestJS", "GraphQL", "PostgreSQL", "AI"],
+          "Designed and built Gloria, an AI agent that interviews 100+ candidates a week and has cut manual recruiting effort by 30%. Also ships full-stack features across the HR-tech platform.",
+        skills: ["AI agents", "RAG", "React", "Next.js", "NestJS", "PostgreSQL"],
       },
       {
         company: "DFCom Software House",
         role: "Full Stack Developer",
         period: "Jun 2024 — May 2025",
         summary:
-          "Led technical decisions, reusable component architecture, API integrations, mentoring, and full-stack delivery for client products.",
+          "Designed and delivered a card payment system integrated with payment terminals across 660+ franchise units. Led technical decisions and mentored junior developers on client projects.",
         skills: [
+          "Payments",
           "Technical leadership",
           "React",
           "Node.js",
-          "APIs",
           "Mentoring",
         ],
       },
@@ -326,6 +326,19 @@ const content: Record<Locale, PortfolioContent> = {
         {
           text: ", from understanding business requirements and designing application architecture to implementing, testing, monitoring, and maintaining production features.",
         },
+      ],
+      [
+        { text: "At Connectabil, I designed and built " },
+        { text: "Gloria", highlight: true },
+        { text: ", an AI interviewing agent that has run " },
+        { text: "2,500+ interviews", highlight: true },
+        { text: " and cut manual recruiting effort by " },
+        { text: "30%", highlight: true },
+        {
+          text: ". Before that, I delivered a card payment system running across ",
+        },
+        { text: "660+ franchise units", highlight: true },
+        { text: "." },
       ],
     ],
     uses: [
@@ -477,13 +490,6 @@ const content: Record<Locale, PortfolioContent> = {
       archiveTitle: "Selected Projects",
       featured: [
         {
-          name: "Fast Copy",
-          description:
-            "A minimal browser extension for copying the current URL with a shortcut.",
-          category: "Browser extension",
-          href: "https://chromewebstore.google.com/detail/bbbgfepehfgaopbfeccedcmcfijofbfn",
-        },
-        {
           name: "Upload AI",
           description:
             "An AI workflow that transcribes videos and turns them into useful content.",
@@ -503,6 +509,13 @@ const content: Record<Locale, PortfolioContent> = {
             "A digital experience built for discovering rural properties across Brazil.",
           category: "Client work",
           href: "https://www.fazendasdobrasil.com.br/",
+        },
+        {
+          name: "Fast Copy",
+          description:
+            "A minimal browser extension for copying the current URL with a shortcut.",
+          category: "Browser extension",
+          href: "https://chromewebstore.google.com/detail/bbbgfepehfgaopbfeccedcmcfijofbfn",
         },
       ],
       groups: [
@@ -749,16 +762,16 @@ const content: Record<Locale, PortfolioContent> = {
         role: "Desenvolvedor Full Stack",
         period: "Mai 2025 — Presente",
         summary:
-          "Desenvolvimento de funcionalidades full-stack e fluxos de recrutamento com IA em um ecossistema moderno de HR tech.",
-        skills: ["React", "Next.js", "NestJS", "GraphQL", "PostgreSQL", "IA"],
+          "Criei a Gloria, agente de IA que entrevista mais de 100 candidatos por semana e já reduziu em 30% o esforço manual de recrutamento. Também desenvolvo funcionalidades full-stack na plataforma de HR tech.",
+        skills: ["Agentes de IA", "RAG", "React", "Next.js", "NestJS", "PostgreSQL"],
       },
       {
         company: "DFCom Software House",
         role: "Desenvolvedor Full Stack",
         period: "Jun 2024 — Mai 2025",
         summary:
-          "Liderança de decisões técnicas, arquitetura de componentes, integrações, mentoria e entregas full-stack.",
-        skills: ["Liderança técnica", "React", "Node.js", "APIs", "Mentoria"],
+          "Projetei e entreguei um sistema de pagamento com cartão integrado a maquininhas em mais de 660 franquias. Liderei decisões técnicas e mentorei devs júnior em projetos de clientes.",
+        skills: ["Pagamentos", "Liderança técnica", "React", "Node.js", "Mentoria"],
       },
       {
         company: "dotkon · Amaggi",
@@ -838,6 +851,19 @@ const content: Record<Locale, PortfolioContent> = {
         { text: "visão de produto", highlight: true },
         { text: " e " },
         { text: "design de interação cuidadoso", highlight: true },
+        { text: "." },
+      ],
+      [
+        { text: "Na Connectabil, projetei e construí a " },
+        { text: "Gloria", highlight: true },
+        { text: ", um agente de IA de entrevistas que já conduziu " },
+        { text: "mais de 2.500 entrevistas", highlight: true },
+        { text: " e reduziu em " },
+        { text: "30%", highlight: true },
+        {
+          text: " o esforço manual de recrutamento. Antes disso, entreguei um sistema de pagamento com cartão que roda em ",
+        },
+        { text: "mais de 660 franquias", highlight: true },
         { text: "." },
       ],
     ],
@@ -990,13 +1016,6 @@ const content: Record<Locale, PortfolioContent> = {
       archiveTitle: "Projetos selecionados",
       featured: [
         {
-          name: "Fast Copy",
-          description:
-            "Uma extensão minimalista para copiar a URL atual usando um atalho.",
-          category: "Extensão de navegador",
-          href: "https://chromewebstore.google.com/detail/bbbgfepehfgaopbfeccedcmcfijofbfn",
-        },
-        {
           name: "Upload AI",
           description:
             "Um fluxo com IA que transcreve vídeos e os transforma em conteúdo útil.",
@@ -1016,6 +1035,13 @@ const content: Record<Locale, PortfolioContent> = {
             "Uma experiência digital para descobrir propriedades rurais pelo Brasil.",
           category: "Trabalho para cliente",
           href: "https://www.fazendasdobrasil.com.br/",
+        },
+        {
+          name: "Fast Copy",
+          description:
+            "Uma extensão minimalista para copiar a URL atual usando um atalho.",
+          category: "Extensão de navegador",
+          href: "https://chromewebstore.google.com/detail/bbbgfepehfgaopbfeccedcmcfijofbfn",
         },
       ],
       groups: [
